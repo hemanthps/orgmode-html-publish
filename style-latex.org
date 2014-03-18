@@ -1,0 +1,9 @@
+#+OPTIONS: tex:t
+#+LATEX_CLASS: article
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \usepackage{fontspec}
+#+LATEX_HEADER_EXTRA: \setmainfont{PT Sans}
+#+LATEX_HEADER_EXTRA: \setmonofont{Consolas}
+#+LATEX_HEADER_EXTRA: \usepackage{amsfonts}
+#+LATEX_HEADER_EXTRA: \usepackage{amssymb}
+#+LATEX_HEADER_EXTRA: \usepackage{graphicx}

@@ -1,0 +1,72 @@
+#+TITLE: Sample Document
+#+AUTHOR: John Doe
+#+EMAIL: john.doe@email.com
+#+DATE: YYYY-MM-DD
+# +OPTIONS: toc:nil
+# +OPTIONS: todo:nil
+# +HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+#+INCLUDE: "./style-solarized-dark.org"
+# +INCLUDE: "./style-solarized-light.org"
+# +INCLUDE: "./style-latex.org"
+
+* Introduction
+This is a sample document to show how one can use different header
+directives to export HTML or LaTeX documents from an /orgmode/
+document.
+
+* Linking to a CSS Document
+If you store your CSS documents in a separate folder, say, =/css=, you
+can link to it by adding the following directive to your /.org/
+document.
+
+#+BEGIN_SRC org
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+#+END_SRC
+
+You can modify the name of the CSS file appropriately in the above
+directive. Exporting the HTML project from your emacs will generate
+the HTML file and link to the css files accordingly. See the 'orgmode'
+manual to know how to set up an HTML publishing project.
+
+* Inline CSS styles
+If you want to generate a single self-contained HTML file which
+includes the necessary styles within the =<style>..</style>= tags
+inside the HTML file, you can insert the following header in your
+document instead of the =#+HTML_HEAD:= directive.
+
+#+BEGIN_SRC org
+#+INCLUDE: "./style-solarized-dark.org"
+#+END_SRC
+
+The content of the CSS file is encapsulated within a
+=#+BEGIN_HTML...#+END_HTML= tag inside the included org file to make
+it easier to embed using the =#+INCLUDE:= tag. You can generate a HTML
+file from this /.org/ file by using the /publish to HTML/ orgmode
+command from emacs.
+
+* Generating a LaTeX file
+Similar to generating the HTML file with embedded CSS, one can
+generate a LaTeX file from the /.org/ file by adding the following
+=#+INCLUDE:= directive.
+
+#+BEGIN_SRC org
+#+INCLUDE: "./style-latex.org"
+#+END_SRC
+
+Generate the LaTeX file by using the /LaTeX Export/ publishing command
+from emacs.
+
+* Other Options
+There are a few options that can be controlled on how the published
+output should look like, e.g., the table of contents, displaying /TODO/
+items, etc. By default, the table of contents and the /TODO/ items are
+published. If you do not want them, you can enable the =#+OPTIONS:=
+line and disable the relevant options, like, =todo:nil= or =todo:nil=,
+etc.
+ 
+* Experiment
+You can play around with the above 3 options by appropriately enabling
+the right directive in this sample /org/ file. Just remove the space
+character after the =#= in the directive. To disable a directive,
+insert a space after the =#= character.
+ 
